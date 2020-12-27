@@ -1,0 +1,144 @@
+.oclock {
+  background-color: #fff;
+  height: 150px;
+  width: 150px;
+}
+
+.circle {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+.circle .center {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  top: 67px;
+  left: 67px;
+  z-index: 99;
+}
+.circle .bar {
+  position: absolute;
+  z-index: 99;
+  transform-origin: 1px 100%;
+}
+.circle .bar.hour-bar {
+  height: 50px;
+  width: 2px;
+  top: 25px;
+  left: 74px;
+  background-color: #cd2020;
+}
+.circle .bar.minute-bar {
+  height: 65px;
+  width: 2px;
+  top: 10px;
+  left: 74px;
+  background-color: #0b0f93;
+}
+.circle .bar.second-bar {
+  height: 75px;
+  width: 2px;
+  left: 74px;
+  top: 1px;
+  background-color: #000;
+}
+
+.circle .hour-number {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  padding: 5px;
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+}
+.circle .hour-number.number-1 {
+  top: 15px;
+  left: 106px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-2 {
+  top: 40px;
+  left: 130px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-3 {
+  top: 62px;
+  left: 125px;
+}
+.circle .hour-number.number-4 {
+  top: 107px;
+  left: 130px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-5 {
+  top: 130px;
+  left: 105px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-6 {
+  left: 62px;
+  top: 125px
+}
+.circle .hour-number.number-7 {
+  top: 130px;
+  left: 40px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-8 {
+  top: 107px;
+  left: 15px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-9 {
+  top: 62px;
+}
+.circle .hour-number.number-10 {
+  top: 40px;
+  left: 15px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-11 {
+  top: 17px;
+  left: 40px;
+  height: 5px;
+  width: 5px;
+  background-color: #000;
+  padding: 0;
+}
+.circle .hour-number.number-12 {
+  top: 0;
+  left: 62px;
+}
+
+.date-label {
+  text-align: center;
+}
