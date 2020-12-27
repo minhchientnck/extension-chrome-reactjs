@@ -1,7 +1,7 @@
 .oclock {
   background-color: #fff;
-  height: 150px;
-  width: 150px;
+  height: 160px;
+  width: 160px;
 }
 
 .circle {
@@ -9,7 +9,7 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 5px solid #000;
 }
 .circle .center {
   position: absolute;

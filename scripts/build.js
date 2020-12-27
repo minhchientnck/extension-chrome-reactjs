@@ -1,5 +1,3 @@
-var fs = require('fs');
-const path = require("path")
 var webpack = require('webpack');
 var config = require('../config/webpack.config');
 

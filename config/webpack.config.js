@@ -5,9 +5,16 @@ var CopyPlugin = require("copy-webpack-plugin");
 
 var appDirectory = fs.realpathSync(process.cwd());
 
+var mode = process.argv[2];
+
+function getBuildMode() {
+  if(mode === 'production') return 'production';
+  return 'development';
+}
+
 module.exports = {
   entry: './src/index.js',
-  mode: 'development',
+  mode: getBuildMode(),
   output: {
     filename: 'index.js',
     path: path.resolve(appDirectory, 'build'),
