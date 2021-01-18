@@ -17,18 +17,18 @@ const Alarm = (props) => {
     }, 100);
   }, []);
 
-  const hourDeg = (hour*30+minute*0.5)%360;
-  const minuteDeg = (minute*6+second*0.1)%360;
+  const hourDeg = (hour * 30 + minute * 0.5) % 360;
+  const minuteDeg = (minute * 6 + second * 0.1) % 360;
   const secondDeg = (second * 6) % 360;
   return (
     <div className="loading" style={{
       width: `${props.width}px`
     }}>
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" >
-        <circle cx="50" cy="50" r="45" fill="none" stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="50" cy="50" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+      <svg viewBox="-1 -1 2 2" xmlns="http://www.w3.org/2000/svg" >
+        <circle cx="0" cy="0" r=".98" fill="none" stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0" cy="0" r=".03" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
         <polygon
-          points="50,50 47,40 50,20 53,40"
+          points="0,0 -0.05,-0.25 0,-0.6 .05,-0.25"
           fill="#ff0303"
           stroke="#ff0303"
           strokeWidth={`${props.strokeWidth}`}
@@ -37,7 +37,7 @@ const Alarm = (props) => {
             attributeName="transform"
             type="rotate"
             calcMode="spline"
-            values={`${hourDeg} 50 50;${hourDeg} 50 50`}
+            values={`${hourDeg} 0 0;${hourDeg} 0 0`}
             times="0;1"
             keySplines="0 1 0 1"
             repeatCount="indefinite"
@@ -45,7 +45,7 @@ const Alarm = (props) => {
           />
         </polygon>
         <polygon
-          points="50,50 47,40 50,12 53,40"
+          points="0,0 -0.05,-0.25 0,-0.8 .05,-0.25"
           fill="#0b0f93"
           stroke="#0b0f93"
           strokeWidth={`${props.strokeWidth}`}
@@ -54,7 +54,7 @@ const Alarm = (props) => {
             attributeName="transform"
             type="rotate"
             calcMode="spline"
-            values={`${minuteDeg} 50 50;${minuteDeg} 50 50`}
+            values={`${minuteDeg} 0 0;${minuteDeg} 0 0`}
             times="0;1"
             keySplines="0 1 0 1"
             repeatCount="indefinite"
@@ -62,81 +62,80 @@ const Alarm = (props) => {
           />
         </polygon>
         <polygon
-          points="50,50 49,50 49,12 51,12 51,50"
-          strokeWidth=".5"
+          points="0,0 -0.02,0 -0.02,-0.85 0.02,-0.85 0.02,0"
+          strokeWidth=".05"
         >
           <animateTransform
             attributeName="transform"
             type="rotate"
             calcMode="spline"
-            values={`${secondDeg} 50 50;${secondDeg} 50 50`}
+            values={`${secondDeg} 0 0;${secondDeg} 0 0`}
             times="0;1"
             keySplines="0 1 0 1"
             repeatCount="indefinite"
             dur="1s"
           />
         </polygon>
-        <circle cx="50" cy="10" r="1.5" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="54.181138530706136" cy="10.219124185269067" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="58.31646763271037" cy="10.874095970647772" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="62.3606797749979" cy="11.957739348193861" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="66.269465723032" cy="13.458181694295966" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="70" cy="15.35898384862245" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="73.51141009169893" cy="17.639320225002102" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="76.76522425435434" cy="20.274206980904232" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="79.72579301909576" cy="23.23477574564567" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="82.36067977499789" cy="26.488589908301073" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="84.64101615137754" cy="29.999999999999996" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="86.54181830570403" cy="33.73053427696799" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="88.04226065180615" cy="37.6393202250021" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="89.12590402935223" cy="41.68353236728962" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="89.78087581473093" cy="45.818861469293864" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="90" cy="50" r="1.5" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="89.78087581473093" cy="54.181138530706136" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="89.12590402935223" cy="58.31646763271036" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="88.04226065180615" cy="62.36067977499789" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="86.54181830570404" cy="66.269465723032" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="84.64101615137756" cy="70" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="82.36067977499789" cy="73.51141009169892" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="79.72579301909576" cy="76.76522425435434" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="76.76522425435434" cy="79.72579301909576" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="73.51141009169893" cy="82.36067977499789" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="70" cy="84.64101615137756" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="66.26946572303201" cy="86.54181830570403" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="62.3606797749979" cy="88.04226065180615" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="58.31646763271037" cy="89.12590402935223" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="54.18113853070615" cy="89.78087581473093" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="50.00000000000001" cy="90" r="1.5" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="45.81886146929388" cy="89.78087581473093" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="41.68353236728964" cy="89.12590402935223" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="37.639320225002095" cy="88.04226065180615" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="33.73053427696801" cy="86.54181830570404" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="29.999999999999996" cy="84.64101615137754" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="26.48858990830108" cy="82.36067977499789" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="23.23477574564567" cy="79.72579301909576" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="20.27420698090424" cy="76.76522425435434" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="17.63932022500211" cy="73.51141009169893" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="15.358983848622458" cy="70.00000000000001" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="13.45818169429596" cy="66.269465723032" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="11.957739348193861" cy="62.360679774997905" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="10.87409597064778" cy="58.31646763271039" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="10.219124185269067" cy="54.181138530706136" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="10" cy="50.00000000000001" r="1.5" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="10.219124185269067" cy="45.81886146929388" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="10.874095970647765" cy="41.68353236728966" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="11.957739348193854" cy="37.63932022500211" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="13.458181694295973" cy="33.73053427696798" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="15.358983848622458" cy="29.999999999999996" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="17.639320225002095" cy="26.488589908301083" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="20.274206980904218" cy="23.23477574564569" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="23.234775745645674" cy="20.274206980904232" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="26.488589908301066" cy="17.63932022500211" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="29.999999999999982" cy="15.358983848622465" r="1" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="33.730534276967994" cy="13.45818169429596" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="37.639320225002095" cy="11.957739348193861" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="41.6835323672896" cy="10.87409597064778" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="45.818861469293864" cy="10.219124185269067" r="0.25" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
-        <circle cx="50" cy="50" r="2" fill="#000" stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0" cy="-0.9" r=".05" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.09407561694088812" cy="-0.895069705831446" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.1871205217359834" cy="-0.8803328406604252" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.2781152949374527" cy="-0.8559508646656382" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.36606297876822014" cy="-0.8221909118783408" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.44999999999999996" cy="-0.7794228634059949" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.5290067270632258" cy="-0.7281152949374528" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.6022175457229725" cy="-0.6688303429296548" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.6688303429296548" cy="-0.6022175457229725" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.7281152949374528" cy="-0.5290067270632258" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.7794228634059948" cy="-0.4500000000000001" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8221909118783408" cy="-0.3660629787682202" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8559508646656382" cy="-0.27811529493745274" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.880332840660425" cy="-0.1871205217359835" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.895069705831446" cy="-0.09407561694088812" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.9" cy="-5.5109105961630896e-17" r=".05" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8950697058314461" cy="0.09407561694088801" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8803328406604252" cy="0.1871205217359832" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8559508646656383" cy="0.27811529493745263" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.8221909118783409" cy="0.3660629787682201" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.7794228634059949" cy="0.4499999999999998" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.7281152949374528" cy="0.5290067270632257" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.6688303429296548" cy="0.6022175457229725" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.6022175457229725" cy="0.6688303429296547" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.5290067270632259" cy="0.7281152949374526" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.44999999999999996" cy="0.7794228634059949" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.3660629787682204" cy="0.8221909118783407" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.27811529493745274" cy="0.8559508646656382" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.1871205217359834" cy="0.8803328406604252" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="0.09407561694088837" cy="0.895069705831446" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="1.1021821192326179e-16" cy="0.9" r=".05" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.09407561694088776" cy="0.8950697058314461" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.18712052173598318" cy="0.8803328406604252" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.27811529493745296" cy="0.8559508646656382" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.36606297876821986" cy="0.822190911878341" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.4500000000000001" cy="0.7794228634059948" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.5290067270632257" cy="0.7281152949374528" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.6022175457229725" cy="0.6688303429296548" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.6688303429296546" cy="0.6022175457229726" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.7281152949374526" cy="0.5290067270632259" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.7794228634059946" cy="0.4500000000000004" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8221909118783409" cy="0.3660629787682201" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8559508646656382" cy="0.2781152949374528" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.880332840660425" cy="0.1871205217359838" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8950697058314461" cy="0.09407561694088802" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.9" cy="1.6532731788489269e-16" r=".05" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8950697058314461" cy="-0.09407561694088769" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8803328406604253" cy="-0.1871205217359827" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8559508646656383" cy="-0.2781152949374525" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.8221909118783407" cy="-0.36606297876822047" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.7794228634059948" cy="-0.4500000000000001" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.7281152949374529" cy="-0.5290067270632256" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.6688303429296552" cy="-0.602217545722972" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.6022175457229724" cy="-0.6688303429296548" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.529006727063226" cy="-0.7281152949374526" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.4500000000000004" cy="-0.7794228634059945" r=".025" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.36606297876822014" cy="-0.8221909118783409" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.27811529493745285" cy="-0.8559508646656382" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.1871205217359839" cy="-0.880332840660425" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
+        <circle cx="-0.09407561694088808" cy="-0.895069705831446" r=".01" fill={props.color} stroke={props.color} strokeWidth={`${props.strokeWidth}`} />
       </svg>
       <div className="date-label">{date.toString()}</div>
     </div>
@@ -152,7 +151,7 @@ Alarm.propsType = {
 Alarm.defaultProps = {
   width: 200,
   color: '#000',
-  strokeWidth: 1,
+  strokeWidth: .025,
 };
 
 export default Alarm;
